@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: sadak-saathi-backend
+    env: java
+    buildCommand: "./mvnw clean install -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
