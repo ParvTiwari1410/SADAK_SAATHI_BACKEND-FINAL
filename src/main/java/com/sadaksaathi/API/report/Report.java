@@ -27,9 +27,12 @@ public class Report {
 
     private LocalDateTime submittedAt = LocalDateTime.now();
 
-    // NEW: Enums for better type safety (optional but recommended)
+    // UPDATED ENUM — matches your frontend EXACTLY
     public enum ReportStatus {
-        REPORTED, IN_PROGRESS, RESOLVED
+        SUBMITTED, 
+        VERIFIED, 
+        REGISTERED, 
+        FIXED
     }
 
     public enum SeverityLevel {
@@ -59,7 +62,6 @@ public class Report {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
-    // NEW: Latitude/Longitude getters and setters
     public Double getLatitude() { return latitude; }
     public void setLatitude(Double latitude) { this.latitude = latitude; }
 
@@ -73,5 +75,5 @@ public class Report {
     public void setSubmittedAt(LocalDateTime submittedAt) { this.submittedAt = submittedAt; }
 
     public String getUserEmail() { return userEmail; }
-    public void setUserEmail(String userEmail) { this.userEmail = userEmail; } 
+    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
 }
