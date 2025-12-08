@@ -22,8 +22,10 @@ public class Report {
     private Double latitude;
     private Double longitude;
 
-    @ElementCollection
-    private List<String> photos;
+    @Convert(converter = StringListConverter.class)
+@Column(columnDefinition = "JSON")
+private List<String> photos;
+
 
     private LocalDateTime submittedAt = LocalDateTime.now();
 
